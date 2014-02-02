@@ -1,0 +1,16 @@
+<% unless @post.important.nil? %>
+
+<% unless @post.important? %>
+    <h3><%= @post.name %></h3>
+<% else %>
+    <h3 style="color: red"><%= @post.name %></h3>
+<% end %>
+<% end %>
+
+<p>
+  <strong>Content:</strong>
+  <%= @post.content %>
+</p>
+
+<%= link_to 'Edit', edit_post_path(@post) %> |
+<%= link_to 'Back', posts_path %>
